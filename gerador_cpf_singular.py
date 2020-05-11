@@ -4,7 +4,7 @@
 import random
 
 """
-Gerador de CPF - Programa que gera números válidos de CPF
+Gerador de CPF - Programa que gera nÃºmeros vÃ¡lidos de CPF
 Copyright (C) 2020 Compass 
 Websites:
     https://8kun.top/slackware/
@@ -32,79 +32,79 @@ MA 02110-1301, USA.
 
 
 class ReceitaFederal:
-    """Classe que representa o CPF (Cadastro de Pessoa Física)."""
+    """Classe que representa o CPF (Cadastro de Pessoa FÃ­sica)."""
 
     def __init__(self):
         """Inicializar os atributos abaixo, caso presentes."""
 
     def instrucoes_gerais(self):
-        """Instruções gerais sobre o funcionamento do programa."""
+        """InstruÃ§Ãµes gerais sobre o funcionamento do programa."""
         mensagem = (
                     "\nSeja bem vindo ao Gerador de CPF!"
-                    "\nEste programa gera números de CPF válidos."
-                    "\nOs números gerados não necessariamente existem."
+                    "\nEste programa gera nÃºmeros de CPF vÃ¡lidos."
+                    "\nOs nÃºmeros gerados nÃ£o necessariamente existem."
                     "\nPara sair a qualquer momento, digite 's'."
                     )
         print(mensagem)
 
 
 class PessoaFisica(ReceitaFederal):
-    """Representar um CPF (Cadastro de Pessoa Física)."""
+    """Representar um CPF (Cadastro de Pessoa FÃ­sica)."""
     
     def __init__(self):
         """Inicializar os atributos abaixo, caso presentes."""
         super().__init__()
         # Atributo self.sair para sair do programa.
         self.sair = None
-        # Armazenar a região fiscal.
+        # Armazenar a regiÃ£o fiscal.
         self.regiao_fiscal = None
-        # Armazenar os oito primeiros números aleatórios de um CPF.
+        # Armazenar os oito primeiros nÃºmeros aleatÃ³rios de um CPF.
         self.cpf_oito_numeros_aleatorios = None
-        # Armazenar o primeiro dígito verificador de um CPF.
+        # Armazenar o primeiro dÃ­gito verificador de um CPF.
         self.cpf_primeiro_digito_verificador = None
-        # Armazenar o segundo dígito verificador de um CPF.
+        # Armazenar o segundo dÃ­gito verificador de um CPF.
         self.cpf_segundo_digito_verificador = None
 
     def gerar_oito_aleatorios(self):
-        """Gerar os primeiros oito números aleatórios."""
-        # Armazenar os oito primeiros números aleatórios do CPF.
+        """Gerar os primeiros oito nÃºmeros aleatÃ³rios."""
+        # Armazenar os oito primeiros nÃºmeros aleatÃ³rios do CPF.
         self.cpf_oito_numeros_aleatorios = []
-        # Criar um contador começando do 0.
+        # Criar um contador comeÃ§ando do 0.
         contador = 0
-        # Criar um loop com o while, para gerar oito números aleatórios.
+        # Criar um loop com o while, para gerar oito nÃºmeros aleatÃ³rios.
         while contador < 8:
-            # Gerar um número aleatório entre 0 e 9.
+            # Gerar um nÃºmero aleatÃ³rio entre 0 e 9.
             numero_aleatorio = random.randint(0, 9)
-            # Salvar cada número aleatório em oito_números_aleatorios.
+            # Salvar cada nÃºmero aleatÃ³rio em oito_nÃºmeros_aleatorios.
             self.cpf_oito_numeros_aleatorios.append(numero_aleatorio)
             # Aumentar o contador em uma unidade.
             contador += 1
         return self.cpf_oito_numeros_aleatorios
 
     def gerar_regiao_fiscal(self):
-        """Utilizar a região fiscal desejada pelo usuário."""
-        # Perguntar para o usuário qual a região fiscal desejada.
+        """Utilizar a regiÃ£o fiscal desejada pelo usuÃ¡rio."""
+        # Perguntar para o usuÃ¡rio qual a regiÃ£o fiscal desejada.
         mensagem = (
-                    "\nDigite a região fiscal desejada."
-                    "\nSe desejar uma região fiscal aleatória, digite '0'."
-                    "\n\n0ª Região: Região Fiscal aleatória;"
-                    "\n1ª Região: DF, GO, MT, MS e TO;"
-                    "\n2ª Região: AC, AM, AP, PA, RO e RR;"
-                    "\n3ª Região: CE, MA e PI;"
-                    "\n4ª Região: AL, PB, PE e RN;"
-                    "\n5ª Região: BA e SE;"
-                    "\n6ª Região: MG;"
-                    "\n7ª Região: ES e RJ;"
-                    "\n8ª Região: SP;"
-                    "\n9ª Região: PR e SC;"
-                    "\n10ª Região: RS."
-                    "\n\nDigite o número da região fiscal desejada (0 a 10): "
+                    "\nDigite a regiÃ£o fiscal desejada."
+                    "\nSe desejar uma regiÃ£o fiscal aleatÃ³ria, digite '0'."
+                    "\n\n0Âª RegiÃ£o: RegiÃ£o Fiscal aleatÃ³ria;"
+                    "\n1Âª RegiÃ£o: DF, GO, MT, MS e TO;"
+                    "\n2Âª RegiÃ£o: AC, AM, AP, PA, RO e RR;"
+                    "\n3Âª RegiÃ£o: CE, MA e PI;"
+                    "\n4Âª RegiÃ£o: AL, PB, PE e RN;"
+                    "\n5Âª RegiÃ£o: BA e SE;"
+                    "\n6Âª RegiÃ£o: MG;"
+                    "\n7Âª RegiÃ£o: ES e RJ;"
+                    "\n8Âª RegiÃ£o: SP;"
+                    "\n9Âª RegiÃ£o: PR e SC;"
+                    "\n10Âª RegiÃ£o: RS."
+                    "\n\nDigite o nÃºmero da regiÃ£o fiscal desejada (0 a 10): "
                     )
 
         """
-        Restringir self.regiao_fiscal a um número inteiro entre 0 e 10.
-        Também é possível reescrever o código, não utilizando o try e
-        usando strings ao invés de números inteiros como anteriormente
+        Restringir self.regiao_fiscal a um nÃºmero inteiro entre 0 e 10.
+        TambÃ©m Ã© possÃ­vel reescrever o cÃ³digo, nÃ£o utilizando o try e
+        usando strings ao invÃ©s de nÃºmeros inteiros como anteriormente
         em instrucoes_gerais().
         Para efeito de aprendizagem, resolvi deixar como abaixo.
         """
@@ -112,29 +112,29 @@ class PessoaFisica(ReceitaFederal):
             try:
                 self.regiao_fiscal = input(mensagem)
                 """
-                Lista de compreensão para gerar os números sequenciais
-                de 1 a 10 (números das regiões fiscais).
+                Lista de compreensÃ£o para gerar os nÃºmeros sequenciais
+                de 1 a 10 (nÃºmeros das regiÃµes fiscais).
                 """
                 numero_valido = [numero for numero in range(1, 10)]
                 """
-                Verificar se região_fiscal e um número valido, caso
-                contrário solicitar novamente.
+                Verificar se regiÃ£o_fiscal e um nÃºmero valido, caso
+                contrÃ¡rio solicitar novamente.
                 """
                 if self.regiao_fiscal == '0':
                     """
-                    A região fiscal 0 faz com que self.regiao_fiscal
-                    assuma um valor aleatório entre 1 e 9. 0 é
-                    reservado para a região fiscal 10 logo abaixo.
+                    A regiÃ£o fiscal 0 faz com que self.regiao_fiscal
+                    assuma um valor aleatÃ³rio entre 1 e 9. 0 Ã©
+                    reservado para a regiÃ£o fiscal 10 logo abaixo.
                     """
                     self.regiao_fiscal = random.randint(1, 9)
                     return self.regiao_fiscal
                     break
                 if self.regiao_fiscal == '10':
-                    # A região fiscal 10 assume o valor 0.
+                    # A regiÃ£o fiscal 10 assume o valor 0.
                     self.regiao_fiscal = 0
                     return self.regiao_fiscal
                 elif self.regiao_fiscal in str(numero_valido):
-                    print(f"\nVocê selecionou a {self.regiao_fiscal}ª Região "
+                    print(f"\nVocÃª selecionou a {self.regiao_fiscal}Âª RegiÃ£o "
                         "Fiscal.")
                     return self.regiao_fiscal
                     break
@@ -147,10 +147,10 @@ class PessoaFisica(ReceitaFederal):
                 continue
         
     def gerar_primeiro_digito_verificador(self):
-        """Gerar o primeiro dígito verificador."""
+        """Gerar o primeiro dÃ­gito verificador."""
         while True:
             """
-            Cálculo do primeiro dígito verificador. A regra utilizada
+            CÃ¡lculo do primeiro dÃ­gito verificador. A regra utilizada
             pode ser encontrada aqui:
             https://www.somatematica.com.br/faq/cpf.php
             """
@@ -173,10 +173,10 @@ class PessoaFisica(ReceitaFederal):
             return self.cpf_primeiro_digito_verificador
 
     def gerar_segundo_digito_verificador(self):
-        """Gerar o segundo dígito verificador."""
+        """Gerar o segundo dÃ­gito verificador."""
         while True:
             """
-            Cálculo do segundo dígito verificador. A regra utilizada
+            CÃ¡lculo do segundo dÃ­gito verificador. A regra utilizada
             pode ser encontrada aqui:
             https://www.somatematica.com.br/faq/cpf.php
             """
@@ -201,12 +201,12 @@ class PessoaFisica(ReceitaFederal):
 
     def gerar_cpf_formatado(self):
         """
-        Gerar um CPF com duas formatações para
+        Gerar um CPF com duas formataÃ§Ãµes para
         facilitar o copiar e colar.
         """
         while True:
-            # Gerar um CPF sem formatação.
-            print("\nCPF gerado sem formatação:")
+            # Gerar um CPF sem formataÃ§Ã£o.
+            print("\nCPF gerado sem formataÃ§Ã£o:")
             print(self.cpf_oito_numeros_aleatorios[0], end = "")
             print(self.cpf_oito_numeros_aleatorios[1], end = "")
             print(self.cpf_oito_numeros_aleatorios[2], end = "")
@@ -218,8 +218,8 @@ class PessoaFisica(ReceitaFederal):
             print(self.regiao_fiscal, end = "")
             print(self.cpf_primeiro_digito_verificador, end = "")
             print(self.cpf_segundo_digito_verificador, end = "")
-            print("\nCPF gerado com formatação:")
-            # Gerar um CPF com formatação.
+            print("\nCPF gerado com formataÃ§Ã£o:")
+            # Gerar um CPF com formataÃ§Ã£o.
             print(self.cpf_oito_numeros_aleatorios[0], end = "")
             print(self.cpf_oito_numeros_aleatorios[1], end = "")
             print(self.cpf_oito_numeros_aleatorios[2], end = ".")
