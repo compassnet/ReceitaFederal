@@ -4,7 +4,7 @@
 import random
 
 """
-Gerador de CNPJ - Programa que gera números válidos de CNPJ
+Gerador de CNPJ - Programa que gera nÃºmeros vÃ¡lidos de CNPJ
 Copyright (C) 2020 Compass 
 Websites:
     https://8kun.top/slackware/
@@ -32,58 +32,58 @@ MA 02110-1301, USA.
 
 
 class ReceitaFederal:
-    """Classe que representa o CNPJ (Cadastro de Pessoa Jurídica)."""
+    """Classe que representa o CNPJ (Cadastro de Pessoa JurÃ­dica)."""
 
     def __init__(self):
         """Inicializar os atributos abaixo, caso presentes."""
 
     def instrucoes_gerais(self):
-        """Instruções gerais sobre o funcionamento do programa."""
+        """InstruÃ§Ãµes gerais sobre o funcionamento do programa."""
         mensagem = (
                     "\nSeja bem vindo ao Gerador de CNPJ!"
-                    "\nEste programa gera números de CNPJ válidos."
-                    "\nOs números gerados são todos de uma matriz."
-                    "\nOs números gerados não necessariamente existem."
+                    "\nEste programa gera nÃºmeros de CNPJ vÃ¡lidos."
+                    "\nOs nÃºmeros gerados sÃ£o todos de uma matriz."
+                    "\nOs nÃºmeros gerados nÃ£o necessariamente existem."
                     )
         print(mensagem)
 
 
 class PessoaJuridica(ReceitaFederal):
-    """Representar um CNPJ (Cadastro Nacional da Pessoa Jurídica)."""
+    """Representar um CNPJ (Cadastro Nacional da Pessoa JurÃ­dica)."""
     
     def __init__(self):
         """Inicializar os atributos abaixo, caso presentes."""
         super().__init__()
         # Atributo self.sair para sair do programa.
         self.sair = None
-        # Armazenar os oito primeiros números aleatórios de um CNPJ.
+        # Armazenar os oito primeiros nÃºmeros aleatÃ³rios de um CNPJ.
         self.cnpj_oito_numeros_aleatorios = None
-        # Armazenar o primeiro dígito verificador de um CNPJ.
+        # Armazenar o primeiro dÃ­gito verificador de um CNPJ.
         self.cnpj_primeiro_digito_verificador = None
-        # Armazenar o segundo dígito verificador de um CNPJ.
+        # Armazenar o segundo dÃ­gito verificador de um CNPJ.
         self.cnpj_segundo_digito_verificador = None
 
     def gerar_oito_aleatorios(self):
-        """Gerar os primeiros oito números aleatórios."""
-        # Armazenar os oito primeiros números aleatórios do CNPJ.
+        """Gerar os primeiros oito nÃºmeros aleatÃ³rios."""
+        # Armazenar os oito primeiros nÃºmeros aleatÃ³rios do CNPJ.
         self.cnpj_oito_numeros_aleatorios = []
-        # Criar um contador começando do 0.
+        # Criar um contador comeÃ§ando do 0.
         contador = 0
-        # Criar um loop com o while, para gerar oito números aleatórios.
+        # Criar um loop com o while, para gerar oito nÃºmeros aleatÃ³rios.
         while contador < 8:
-            # Gerar um número aleatório entre 0 e 9.
+            # Gerar um nÃºmero aleatÃ³rio entre 0 e 9.
             numero_aleatorio = random.randint(0, 9)
-            # Salvar cada número aleatório em oito_números_aleatorios.
+            # Salvar cada nÃºmero aleatÃ³rio em oito_nÃºmeros_aleatorios.
             self.cnpj_oito_numeros_aleatorios.append(numero_aleatorio)
             # Aumentar o contador em uma unidade.
             contador += 1
         return self.cnpj_oito_numeros_aleatorios
 
     def gerar_primeiro_digito_verificador(self):
-        """Gerar o primeiro dígito verificador."""
+        """Gerar o primeiro dÃ­gito verificador."""
         while True:
             """
-            Cálculo do primeiro dígito verificador. A regra utilizada
+            CÃ¡lculo do primeiro dÃ­gito verificador. A regra utilizada
             pode ser encontrada aqui:
             https://www.geradorcnpj.com/algoritmo_do_cnpj.htm
             """
@@ -110,10 +110,10 @@ class PessoaJuridica(ReceitaFederal):
             return self.cnpj_primeiro_digito_verificador
 
     def gerar_segundo_digito_verificador(self):
-        """Gerar o segundo dígito verificador."""
+        """Gerar o segundo dÃ­gito verificador."""
         while True:
             """
-            Cálculo do segundo dígito verificador. A regra utilizada
+            CÃ¡lculo do segundo dÃ­gito verificador. A regra utilizada
             pode ser encontrada aqui:
             https://www.geradorcnpj.com/algoritmo_do_cnpj.htm
             """
@@ -142,12 +142,12 @@ class PessoaJuridica(ReceitaFederal):
 
     def gerar_cnpj_formatado(self):
         """
-        Gerar um CNPJ com duas formatações
+        Gerar um CNPJ com duas formataÃ§Ãµes
         para facilitar o copiar e colar.
         """
         while True:
-            # Gerar um CNPJ sem formatação.
-            print("\nCNPJ gerado sem formatação:")
+            # Gerar um CNPJ sem formataÃ§Ã£o.
+            print("\nCNPJ gerado sem formataÃ§Ã£o:")
             print(self.cnpj_oito_numeros_aleatorios[0], end = "")
             print(self.cnpj_oito_numeros_aleatorios[1], end = "")
             print(self.cnpj_oito_numeros_aleatorios[2], end = "")
@@ -162,8 +162,8 @@ class PessoaJuridica(ReceitaFederal):
             print(1, end = "")
             print(self.cnpj_primeiro_digito_verificador, end = "")
             print(self.cnpj_segundo_digito_verificador, end = "")
-            print("\nCNPJ gerado com formatação:")
-            # Gerar um CNPJ com formatação.
+            print("\nCNPJ gerado com formataÃ§Ã£o:")
+            # Gerar um CNPJ com formataÃ§Ã£o.
             print(self.cnpj_oito_numeros_aleatorios[0], end = "")
             print(self.cnpj_oito_numeros_aleatorios[1], end = ".")
             print(self.cnpj_oito_numeros_aleatorios[2], end = "")
